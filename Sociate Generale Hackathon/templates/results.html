@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>VBA Code Analysis</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='styles.css') }}">
+</head>
+<body>
+    <h1>VBA Code Analysis</h1>
+    {% if data.modules %}
+        {% for module in data.modules %}
+            <h2>Module: {{ module.module_name }}</h2>
+            <pre>{{ module.code }}</pre>
+        {% endfor %}
+    {% else %}
+        <p>No VBA code found.</p>
+    {% endif %}
+</body>
+</html>
